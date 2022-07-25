@@ -61,7 +61,7 @@ If you already have these installed, then skip ahead.
 You can install a single version of Node.js, but the more common practice is to install [`nvm` (Node Version Manager)](https://github.com/nvm-sh/nvm), which allows you manage multiple versions of node on the same system.
 
 ```
-$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 ```
 
 Running this command downloads and runs the script in your shell.
