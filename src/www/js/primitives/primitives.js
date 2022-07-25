@@ -19,8 +19,8 @@ export function exercise2() {
 }
 
 /******************************************************************************
- * EXERCISE 3: This function searches for a user. Return the value that would
- *             be expected if the user is not found or doesn't exist.
+ * EXERCISE 3: Return a value that could be used to represent something not
+ *             existing or being absent (e.g. a user that doesn't exist).
  */
 export function exercise3() {
 

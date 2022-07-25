@@ -257,3 +257,16 @@ So use it sparingly.
 $ cd src # (from root)
 $ npx jest primitives.test.js --watch
 ```
+
+### Exercise
+
+If you get an error like this:
+
+```
+ FAIL  ./primitives.test.js
+  - Test suite failed to run
+
+    Jest encountered an unexpected token
+```
+
+That means you're not running the test command from `webdev/src`.

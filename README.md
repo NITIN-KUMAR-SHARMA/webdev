@@ -37,7 +37,6 @@ $ bin/branchupdate
 
 We're going to walk through installation of the following:
 
-- nvm
 - Node.js
 - yarn
 
@@ -47,55 +46,30 @@ You can check if you already have what you need:
 $ node -v
 # should be >= 14
 $ npm -v
-# should be >= 7
+# should be >= 6
 $ yarn -v
 # should be >= 1.22
 ```
 
 If you already have these installed, then skip ahead.
 
-### `nvm`
+### `Node.js`
 
-**This is for macOS and Linux only. Windows users can just go to [nodejs.org](https://nodejs.org) and install there.**
+Visit <https://nodejs.org/en/download/> and download the LTS version (v16). Install it, then run
 
-You can install a single version of Node.js, but the more common practice is to install [`nvm` (Node Version Manager)](https://github.com/nvm-sh/nvm), which allows you manage multiple versions of node on the same system.
-
-```
-$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+```bash
+$ node -v
 ```
 
-Running this command downloads and runs the script in your shell.
-
-Note the output: `nvm` will automatically update one of your profile files in your home directory (`~/.bash_profile`, `~/.zshrc`, `~/.profile`, or `~/.bashrc`, it tries to make a reasonable guess).
- 
-**Open a fresh shell** and verify you can access `nvm` now:
-
-```shell
-$ nvm --version
-0.39.1 # or something higher
-
-$ echo $NVM_DIR
-/some/path/to/.nvm
-```
-
-(In case you're curious and noticed it, `$ which nvm` doesn't work because `nvm` is a function sourced from a shell script and is not an executable binary.)
-
-### Node.js
-
-Now you can download a recent version of Node.js. Node.js goes through lots of iterations, but it releases Long-Term Support (LTS) versions that are promised to be stable and maintained for a long time. The easiest way to get a version:
-
-```shell
-$ nvm install 14
-``` 
-
-Use `$ nvm ls` to look at all the LTS Node.js versions.
+and verify it prints out the version you installed.
 
 ### `npm`
 
 It comes with your Node.js install. Verify the installation with:
 
 ```bash
-$ npm --version
+$ npm -v
+# should be >= 6
 ```
 
 **NB: Avoid `sudo` with `npm`**: If you ever install packages with `npm` and you are prompted to use `sudo`, something has gone wrong. Don't do it, as it will all end in tears and your system can get very messed up. Ask for help.
@@ -107,6 +81,7 @@ $ npm --version
 ```bash
 $ npm install --global yarn
 $ yarn -v
+# should be >= 1.22
 ```
 
 ### Install local dependencies
@@ -114,9 +89,18 @@ $ yarn -v
 ```bash
 $ cd src
 $ yarn
+
+# if you get a permissions error, try this:
+$ npm install
 ```
 
-Now you have all the dependencies!
+Now verify you have everything installed by running the webserver:
+
+```bash
+$ npm run start
+```
+
+You should see it print out `Waiting...` at the end, and sit there. That means your webserver is running. You can `Ctrl+C` to stop the webserver at any time.
 
 ### Text Editor
 
@@ -157,7 +141,7 @@ Most of the action lives inside `/src`, that's where you'll be doing most of you
 
 ```shell
 $ cd src
-$ yarn start
+$ npm run start
 ```
 
 > If you're a Windows user, you may also run into other security blocks like Windows Defender, just go ahead and cancel/ignore/permit any warnings.
