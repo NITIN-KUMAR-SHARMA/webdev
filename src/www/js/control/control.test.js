@@ -26,7 +26,7 @@ describe("Flow control exercises", () => {
 
     it("returns animal for dog", () => {
       expect(exercise2("dog")).toBeDefined();
-      expect(exercise2("dog")).toEqual("dog");
+      expect(exercise2("dog")).toEqual("animal");
     });
 
     it("returns null for all else", () => {
